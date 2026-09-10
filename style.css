@@ -73,18 +73,18 @@ main {
     color: #aaa;
 }
 
-/* Grille de 4 cartes carrées sur la page d'accueil */
+/* Grille de 6 cartes carrées (3x2) */
 .square-grid {
     display: grid;
-    grid-template-columns: repeat(2, 160px); /* 2 colonnes carrées */
+    grid-template-columns: repeat(3, 150px); /* 3 colonnes de 150px */
     gap: 15px;
-    justify-content: center; /* Centre le bloc de carrés */
+    justify-content: center; /* Centre la grille sur la page */
     margin-top: 25px;
 }
 
 .square-card {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     position: relative;
     border-radius: 8px;
     overflow: hidden;
@@ -111,13 +111,13 @@ main {
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-    padding: 10px 5px;
+    padding: 8px 4px;
     text-align: center;
 }
 
 .square-card .overlay span {
     color: #fff;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
