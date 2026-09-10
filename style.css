@@ -50,24 +50,55 @@ nav a:hover {
 /* Contenu Principal */
 main {
     flex: 1;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
     width: 100%;
+    margin-top: 0px;
+    padding-bottom: 40px;
 }
 
-h1 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+/* Page d'accueil - Bandeau d'images mix */
+.homepage-carousel {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    overflow: hidden;
+    background-color: #0a0a0a;
+}
+
+.homepage-carousel img {
+    height: 100%;
+    width: 25%;
+    object-fit: cover;
+    border-right: 1px solid #222;
+}
+
+/* Texte de bienvenue */
+.welcome-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
     text-align: center;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #aaa;
+    line-height: 1.6;
 }
 
 /* Grille Prestations */
 .grid-container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    margin-top: 30px;
 }
 
 .card {
@@ -118,7 +149,7 @@ h1 {
 /* Formulaire Contact */
 .contact-container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 40px auto;
     background-color: #181818;
     padding: 30px;
     border-radius: 8px;
