@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarifs Entreprise - VStudio</title>
+    <title>Prestation Entreprise - VStudio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <a href="index.html" class="logo">VStudio</a>
         <nav>
@@ -17,15 +18,37 @@
             </ul>
         </nav>
     </header>
+
     <main>
+        <div class="presta-header">
+            <h1>Vidéo d'Entreprise & Mise en Vitrine</h1>
+            <p>Mettez en valeur votre activité, vos locaux et vos équipes grâce à des vidéos captivantes et professionnelles.</p>
+        </div>
+
+        <section class="video-gallery">
+            <h2>Réalisation vidéo</h2>
+            <div class="video-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto 40px auto;">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls playsinline poster="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800">
+                            <source src="pub laure.mov" type="video/quicktime">
+                            <source src="pub laure.mp4" type="video/mp4">
+                            Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+                        </video>
+
+                        </div>
+                    <h3>Vidéo de présentation / Promotion</h3>
+                </div>
+            </div>
+        </section>
+
         <div class="tarifs-container">
-            <h1>Vidéo Entreprise (Portrait / Locaux)</h1>
-            <p class="tarifs-intro">Nous mettons en valeur votre entreprise visuellement pour une meilleure visibilité sur votre site ou réseaux sociaux.</p>
+            <h2>Grille Tarifaire</h2>
             <div class="table-responsive">
                 <table class="tarifs-table">
                     <thead>
                         <tr>
-                            <th>Demi-journée / Shooting court (2h à 4h)</th>
+                            <th>Format court / Demi-journée (2h à 4h)</th>
                             <th>Journée complète de shooting</th>
                         </tr>
                     </thead>
@@ -42,6 +65,10 @@
             </div>
         </div>
     </main>
-    <footer>&copy; VStudio - Tous droits réservés.</footer>
+
+    <footer>
+        &copy; VStudio - Tous droits réservés.
+    </footer>
+
 </body>
 </html>
