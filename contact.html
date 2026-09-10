@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous Contacter - VStudio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <a href="index.html" class="logo">VStudio</a>
+        <nav>
+            <ul>
+                <li><a href="prestations.html">Mes Prestations</a></li>
+                <li><a href="entreprise.html">Mon Entreprise</a></li>
+                <li><a href="contact.html">Nous Contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Numéro de téléphone *</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="Entrez votre numéro de téléphone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="evenement">Type d'événement *</label>
+                    <select id="evenement" name="evenement" required>
+                        <option value="Mariage">Mariage</option>
+                        <option value="Gala">Gala</option>
+                        <option value="Séminaire">Séminaire</option>
+                        <option value="Défilé">Défilé</option>
+                        <option value="Création Digital">Création Digital (TikTok, Twitch...)</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; VStudio - Tous droits réservés.
+    </footer>
+
+</body>
+</html>
