@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarifs Défilé - VStudio</title>
+    <title>Prestation Défilé - VStudio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <a href="index.html" class="logo">VStudio</a>
         <nav>
@@ -17,10 +18,33 @@
             </ul>
         </nav>
     </header>
+
     <main>
+        <div class="presta-header">
+            <h1>Prestation Défilé</h1>
+            <p>Découvrez notre réalisation vidéo pour les événements de mode, suivie de notre grille tarifaire.</p>
+        </div>
+
+        <!-- Section Lecteur Vidéo -->
+        <section class="video-gallery">
+            <h2>Réalisation vidéo</h2>
+            <div class="video-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto 40px auto;">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls playsinline poster="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800">
+                            <source src="video defiller etam.mov" type="video/quicktime">
+                            <source src="video defiller etam.mp4" type="video/mp4">
+                            Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+                        </video>
+                    </div>
+                    <h3>Captation Défilé de Mode</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Tarifs -->
         <div class="tarifs-container">
-            <h1>Défilé</h1>
-            <p class="tarifs-intro">Une capture dynamique et immersive pour vos présentations de collection les plus exigeantes.</p>
+            <h2>Grille Tarifaire</h2>
             <div class="table-responsive">
                 <table class="tarifs-table">
                     <thead>
@@ -42,6 +66,10 @@
             </div>
         </div>
     </main>
-    <footer>&copy; VStudio - Tous droits réservés.</footer>
+
+    <footer>
+        &copy; VStudio - Tous droits réservés.
+    </footer>
+
 </body>
 </html>
