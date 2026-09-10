@@ -76,9 +76,9 @@ main {
 /* Grille de 6 cartes carrées (3x2) */
 .square-grid {
     display: grid;
-    grid-template-columns: repeat(3, 150px); /* 3 colonnes de 150px */
+    grid-template-columns: repeat(3, 150px);
     gap: 15px;
-    justify-content: center; /* Centre la grille sur la page */
+    justify-content: center;
     margin-top: 25px;
 }
 
@@ -123,7 +123,7 @@ main {
     letter-spacing: 0.5px;
 }
 
-/* Grille Prestations (Page Prestations) */
+/* Grille Prestations */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -140,6 +140,16 @@ main {
     flex-direction: column;
 }
 
+.card-link {
+    text-decoration: none;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card-link:hover {
+    transform: translateY(-5px);
+    border-color: #b83232;
+}
+
 .card img {
     width: 100%;
     height: 180px;
@@ -148,6 +158,9 @@ main {
 
 .card-content {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .card-content h3 {
@@ -160,6 +173,82 @@ main {
     color: #aaa;
     font-size: 0.95rem;
     line-height: 1.4;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.voir-tarifs {
+    color: #b83232;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Page Tarifs */
+.tarifs-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tarifs-container h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.tarifs-intro {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.tarifs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.tarifs-table th, 
+.tarifs-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.tarifs-table th {
+    background-color: #151515;
+    color: #b83232;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tarifs-table td {
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+.tarifs-table td span {
+    display: block;
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 2px;
+}
+
+.tarifs-table tbody tr:hover {
+    background-color: #252525;
+}
+
+.tarifs-action {
+    text-align: center;
+    margin-top: 30px;
 }
 
 /* Page Mon Entreprise */
