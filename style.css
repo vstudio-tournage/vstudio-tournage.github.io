@@ -1,32 +1,31 @@
+/* --- Style Général --- */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
+    font-family: Arial, sans-serif;
     background-color: #121212;
     color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    line-height: 1.6;
 }
 
-/* En-tête / Navigation */
+/* --- Header / Navigation --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: #0a0a0a;
-    border-bottom: 1px solid #222;
+    padding: 20px 5%;
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #333;
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 24px;
     font-weight: bold;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -36,170 +35,148 @@ nav ul {
     gap: 20px;
 }
 
-nav a {
-    color: #ccc;
+nav ul li a {
+    color: #cccccc;
     text-decoration: none;
-    font-weight: 500;
     transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #b83232;
+nav ul li a:hover {
+    color: #ffffff;
 }
 
-/* Contenu Principal */
-main {
-    flex: 1;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* --- Page d'accueil : Grille de carrés --- */
+.welcome-section {
+    text-align: center;
     padding: 40px 20px;
 }
 
-/* Texte de bienvenue */
-.welcome-section {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
 .welcome-section h1 {
-    font-size: 2.2rem;
+    font-size: 32px;
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
 .welcome-section p {
-    font-size: 1rem;
-    color: #aaa;
+    color: #aaaaaa;
 }
 
-/* Grille de 6 cartes carrées (3x2) */
 .square-grid {
     display: grid;
-    grid-template-columns: repeat(3, 150px);
-    gap: 15px;
-    justify-content: center;
-    margin-top: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
 }
 
 .square-card {
-    width: 150px;
-    height: 150px;
     position: relative;
-    border-radius: 8px;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
-    border: 1px solid #333;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: #222;
+    display: block;
     text-decoration: none;
-    transition: transform 0.3s, border-color 0.3s;
 }
 
-.square-card:hover {
-    transform: scale(1.05);
-    border-color: #b83232;
-}
-
-.square-card img {
+.square-card img,
+.square-card video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.square-card:hover img,
+.square-card:hover video {
+    transform: scale(1.05);
 }
 
 .square-card .overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-    padding: 8px 4px;
-    text-align: center;
-}
-
-.square-card .overlay span {
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Grille Prestations */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.card {
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #333;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
 }
 
-.card-link {
-    text-decoration: none;
-    transition: transform 0.3s, border-color 0.3s;
+.square-card:hover .overlay {
+    background: rgba(0, 0, 0, 0.2);
 }
 
-.card-link:hover {
-    transform: translateY(-5px);
-    border-color: #b83232;
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.card-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.card-content p {
-    color: #aaa;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    margin-bottom: 15px;
-    flex: 1;
-}
-
-.voir-tarifs {
-    color: #b83232;
-    font-size: 0.85rem;
+.square-card span {
+    color: #ffffff;
+    font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Page Tarifs */
-.tarifs-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.tarifs-container h1 {
+/* --- Pages de Prestations / Vidéos & Tarifs --- */
+.presta-header {
     text-align: center;
-    font-size: 2.2rem;
+    padding: 40px 20px 20px 20px;
+}
+
+.presta-header h1 {
+    font-size: 28px;
     margin-bottom: 10px;
 }
 
-.tarifs-intro {
+.video-gallery {
+    padding: 20px;
+}
+
+.video-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.video-card {
+    background: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 15px;
     text-align: center;
-    color: #aaa;
-    margin-bottom: 30px;
+}
+
+.video-card h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Encapsulation vidéo responsive (pour iframe et vidéos natives) */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Ratio 16:9 par défaut */
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Tableaux de Tarifs --- */
+.tarifs-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.tarifs-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
 .table-responsive {
@@ -209,130 +186,79 @@ main {
 .tarifs-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #1e1e1e;
+    background: #1f1f1f;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid #333;
+    margin-bottom: 20px;
 }
 
 .tarifs-table th, 
 .tarifs-table td {
-    padding: 15px 20px;
-    text-align: left;
-    border-bottom: 1px solid #2a2a2a;
+    padding: 15px;
+    border: 1px solid #333;
+    text-align: center;
+    color: #ddd;
 }
 
 .tarifs-table th {
-    background-color: #151515;
-    color: #b83232;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.tarifs-table td {
-    color: #ddd;
-    font-size: 0.95rem;
-}
-
-.tarifs-table td span {
-    display: block;
-    color: #888;
-    font-size: 0.85rem;
-    margin-top: 2px;
-}
-
-.tarifs-table tbody tr:hover {
-    background-color: #252525;
-}
-
-.tarifs-action {
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* Page Mon Entreprise */
-.entreprise-content {
-    max-width: 800px;
-    margin: 40px auto;
-    background-color: #1e1e1e;
-    padding: 40px;
-    border-radius: 8px;
-    border: 1px solid #333;
-    text-align: center;
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: #ddd;
-}
-
-/* Formulaire Contact */
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #181818;
-    padding: 30px;
-    border-radius: 8px;
-}
-
-.form-group-row {
-    display: flex;
-    gap: 15px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    flex: 1;
-}
-
-.form-group label {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
-.form-group input, 
-.form-group select, 
-.form-group textarea {
-    padding: 12px;
-    background-color: #252525;
-    border: 1px solid #333;
-    border-radius: 4px;
+    background-color: #2c2c2c;
     color: #fff;
-    font-size: 0.95rem;
-}
-
-.form-group input:focus, 
-.form-group select:focus, 
-.form-group textarea:focus {
-    outline: none;
-    border-color: #b83232;
 }
 
 .btn-submit {
-    width: 100%;
-    padding: 14px;
-    background-color: #b83232;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 12px 25px;
+    border-radius: 5px;
     font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s;
 }
 
 .btn-submit:hover {
-    background-color: #962828;
+    background-color: #cccccc;
 }
 
-/* Pied de page */
+/* --- Pied de page --- */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #0a0a0a;
-    border-top: 1px solid #222;
-    color: #666;
-    font-size: 0.85rem;
+    background-color: #1f1f1f;
+    color: #777;
+    font-size: 14px;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+/* ==========================================================
+   --- RESPONSIVE DESIGN (Adaptation automatique Téléphone) ---
+   ========================================================== */
+@media screen and (max-width: 768px) {
+    /* Le menu passe en colonne ou s'adapte */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* La grille d'accueil passe de 3 colonnes à 1 seule colonne sur mobile */
+    .square-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .welcome-section h1 {
+        font-size: 24px;
+    }
+
+    .presta-header h1 {
+        font-size: 22px;
+    }
 }
